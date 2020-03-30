@@ -25,14 +25,14 @@ sudo apt -y install docker-compose
 
 sudo ln -s "/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe" /usr/local/bin/docker-compose
 
-sudo apt-get install ruby ruby-dev
+sudo apt -y install ruby ruby-dev
 sudo gem install docker-sync
 
 echo "export DOCKER_HOST=tcp://127.0.0.1:2375" >> ~/.bashrc
 
-sudo apt-get install build-essential
+sudo apt -y install build-essential
 
-sudo apt-get install make
+sudo apt -y install make
 wget http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.1.tar.gz
 tar xvf ocaml-4.08.1.tar.gz
 cd ocaml-4.08.1
