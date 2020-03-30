@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# bash -c "$(curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/ppiotrowski/docker-sync/master/install.sh)"
+
 sudo apt update
 sudo apt -y upgrade
 
