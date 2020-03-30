@@ -44,6 +44,7 @@ sudo make install
 sudo make clean
 
 cd ..
+wget https://github.com/bcpierce00/unison/archive/v2.51.2.tar.gz
 tar xvf v2.51.2.tar.gz
 cd unison-2.51.2
 # The implementation src/system.ml does not match the interface system.cmi:curl and needs to be patched
