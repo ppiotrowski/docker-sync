@@ -45,17 +45,17 @@ umask 022
 sudo make install
 sudo make clean
 
-#cd ..
-#wget https://github.com/bcpierce00/unison/archive/v2.51.2.tar.gz
-#tar xvf v2.51.2.tar.gz
-#cd unison-2.51.2
-## The implementation src/system.ml does not match the interface system.cmi:curl and needs to be patched
-#curl https://github.com/bcpierce00/unison/commit/23fa1292.diff?full_index=1 -o patch.diff
-#git apply patch.diff
-#make UISTYLE=text
-#sudo cp src/unison /usr/local/bin/unison
-#sudo cp src/unison-fsmonitor /usr/local/bin/unison-fsmonitor
-sudo apt -y install unison
+cd ..
+wget https://github.com/bcpierce00/unison/archive/v2.51.2.tar.gz
+tar xvf v2.51.2.tar.gz
+cd unison-2.51.2
+# The implementation src/system.ml does not match the interface system.cmi:curl and needs to be patched
+curl https://github.com/bcpierce00/unison/commit/23fa1292.diff?full_index=1 -o patch.diff
+git apply patch.diff
+make UISTYLE=text
+sudo cp src/unison /usr/local/bin/unison
+sudo cp src/unison-fsmonitor /usr/local/bin/unison-fsmonitor
+#sudo apt -y install unison
 
 sudo mkdir /c
 sudo mount --bind /mnt/c /c
@@ -69,8 +69,8 @@ echo "sudo mount --bind /mnt/e /e" >> ~/.bashrc && source ~/.bashrc
 #sungroup ALL=(root) NOPASSWD: /usr/local/bin/docker-sync
 sudo visudo
 
-sudo cat <<EOT >> /etc/wsl.conf
-[automount]
-root = /
-options = "metadata"
-EOT
+#sudo cat <<EOT >> /etc/wsl.conf
+#[automount]
+#root = /
+#options = "metadata"
+#EOT
