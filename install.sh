@@ -64,7 +64,7 @@ echo "sudo mount --bind /mnt/e /e" >> ~/.bashrc && source ~/.bashrc
 #username ALL=(root) NOPASSWD: /bin/mount
 sudo visudo
 
-cat <<EOT >> /etc/wsl.conf
+sudo cat <<EOT >> /etc/wsl.conf
 [automount]
 root = /
 options = "metadata"
