@@ -30,7 +30,7 @@ sudo ln -s "/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe"
 sudo apt -y install ruby ruby-dev
 sudo gem install docker-sync
 
-echo "export DOCKER_HOST=tcp://127.0.0.1:2375" >> ~/.bashrc
+echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc
 
 sudo apt -y install build-essential
 
