@@ -71,8 +71,8 @@ sudo cp src/unison-fsmonitor /usr/local/bin/unison-fsmonitor
 
 #sungroup ALL=(root) NOPASSWD: /bin/mount
 #sungroup ALL=(root) NOPASSWD: /usr/local/bin/docker-sync
-sudo visudo
-
+#sudo visudo
+sudo touch /etc/wsl.conf
 #sudo cat <<EOT >> /etc/wsl.conf
 #[automount]
 #root = /
