@@ -14,23 +14,27 @@ sudo apt -y install \
     
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
    
 sudo apt update
 sudo apt -y install docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker $USER
 
-sudo ln -s "/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe" /usr/local/bin/docker
+//sudo ln -s "/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe" /usr/local/bin/docker
 
-sudo apt -y install docker-compose
+//sudo apt -y install docker-compose
 
-sudo ln -s "/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe" /usr/local/bin/docker-compose
+//sudo ln -s "/mnt/c/Program Files/Docker/Docker/resources/bin/docker-compose.exe" /usr/local/bin/docker-compose
+
+sudo apt-get install -y python python-pip
+pip install --user docker-compose
 
 sudo apt -y install ruby ruby-dev
 sudo gem install docker-sync
 
-echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc
+echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc && source ~/.bashrc
 
 sudo apt -y install build-essential
 
@@ -57,13 +61,13 @@ sudo cp src/unison /usr/local/bin/unison
 sudo cp src/unison-fsmonitor /usr/local/bin/unison-fsmonitor
 #sudo apt -y install unison
 
-sudo mkdir /c
-sudo mount --bind /mnt/c /c
-echo "sudo mount --bind /mnt/c /c" >> ~/.bashrc && source ~/.bashrc
+#sudo mkdir /c
+#sudo mount --bind /mnt/c /c
+#echo "sudo mount --bind /mnt/c /c" >> ~/.bashrc && source ~/.bashrc
 
-sudo mkdir /e
-sudo mount --bind /mnt/e /e
-echo "sudo mount --bind /mnt/e /e" >> ~/.bashrc && source ~/.bashrc
+#sudo mkdir /e
+#sudo mount --bind /mnt/e /e
+#echo "sudo mount --bind /mnt/e /e" >> ~/.bashrc && source ~/.bashrc
 
 #sungroup ALL=(root) NOPASSWD: /bin/mount
 #sungroup ALL=(root) NOPASSWD: /usr/local/bin/docker-sync
